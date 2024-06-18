@@ -1,1 +1,1 @@
-# smartfridge-chef
+# SmartFridge-Chef
