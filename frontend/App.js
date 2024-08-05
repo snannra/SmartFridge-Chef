@@ -1,43 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import StartPage from './components/StartPage';
+import HomePage from './components/HomePage';
 
-import Button from './components/Button';
-import ImageViewer from './components/ImageViewer';
-
-const PlaceholderImage = require('./assets/images/background-image.png');
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <ImageViewer placeHolderImageSource={PlaceholderImage} />
-      </View>
-      <View style={styles.footerContainer}>
-        <Button label="Choose a photo"/>
-        <Button label="Use this photo"/>
-      </View>
-      <StatusBar style="auto"/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Start">
+        <Stack.Screen name="Start" component={StartPage} options={{headerShown: false}}/>
+        <Stack.Screen name="Home" component={HomePage} /*options={{headerShown: false}}*//>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#25292e',
-    alignItems: 'center',
-  },
-  imageContainer: {
-    flex: 1,
-    paddingTop: 58,
-  },
-  image: {
-    width: 320,
-    height: 440,
-    borderRadius: 18,
-  },
-  footerContainer: {
-    flex: 1/3,
-    alignItems: 'center',
-  },
-});
