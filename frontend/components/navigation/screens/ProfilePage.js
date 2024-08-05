@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
-        Hello
+        Profile Page
       </Text>
     </View>
   );

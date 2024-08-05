@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import StartPage from './components/StartPage';
-import HomePage from './components/HomePage';
+import { createStackNavigator } from '@react-navigation/stack';
+import StartPage from './components/navigation/screens/StartPage';
+import MainContainer from './components/navigation/MainContainer';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Start">
-        <Stack.Screen name="Start" component={StartPage} options={{headerShown: false}}/>
-        <Stack.Screen name="Home" component={HomePage} /*options={{headerShown: false}}*//>
+        <Stack.Screen name="Start" component={StartPage} options={{ headerShown: false }} />
+        <Stack.Screen name="Main" component={MainContainer} options={{ headerShown: true }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

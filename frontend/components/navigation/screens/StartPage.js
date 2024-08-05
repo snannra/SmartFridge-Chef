@@ -8,7 +8,7 @@ export default function StartPage({ navigation }) {
         SmartFridge
       </Text>
       <View>
-        <Pressable style={styles.buttonContainer} onPress={() => navigation.navigate("Home")}>
+        <Pressable style={styles.buttonContainer} onPress={() => navigation.navigate("Main")}>
           <Text style={styles.buttonLabel}>Get Started</Text>
         </Pressable>
       </View>
