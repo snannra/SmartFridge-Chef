@@ -32,7 +32,7 @@ export default function HomePage() {
             placeholder="https://picsum.photos/seed/696/3000/2000"
             source={selectedImage}
             contentFit="cover"
-            transition={1000}/>
+            transition={2000}/>
         </View>
         <View style={styles.buttonContainer}>
             <Pressable style={styles.button} onPress={pickImageAsync}>
